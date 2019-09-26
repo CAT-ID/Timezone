@@ -1,95 +1,60 @@
-# World Map Generator 
+<!DOCTYPE html>
+<html lang="en-us">
 
-# WorldMapGenerator is a jQuery-based
+<head>
+    <meta charset="UTF-8">
+    <title>This timezone-picker is a responsive jquey plugin which creates a Map using SVG. A user can select a country from worldmap and it returns timezone value of selected country.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This timezone-picker is a responsive jquey plugin which creates a Map using SVG. A user can select a country from worldmap and it returns timezone value of selected country.">
+    <meta name="keywords" content="jquery world map,world map generator,world map jquery,jquery map,timezone map,timezone,timezone selection,map, jquery map,create map,WORLD MAP,auto map creator,map generator,create map online">
+    <meta name="author" content="Keval Bhatt">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/timezone-picker.min.js"></script>
+    <style type="text/css">
+    .Cbox select {
+        background-color: #D8D8D8 !important;
+        color: #505559 !important;
+        font-size: small !important;
+    }
+    </style>
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-![WorldMap](http://i.imgur.com/i22GQ74.png?1)
+    ga('create', 'UA-70749255-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+</head>
 
-# Description
+<body>
+     
+<div style="height:600px;" id="map"></div>
+        <script type="text/javascript">
+        $('#map').timezonePicker({
+            quickLink: [{
+                "PST": "PST",
+                "MST": "MST",
+                "CST": "CST",
+                "EST": "EST",
+                "GMT": "GMT",
+                "LONDON": "Europe/London",
+                "IST": "IST"
+            }]
+        });
+        </script>
+</body>
 
-This WorldMapGenerator is jquey plugin for creates a Map using SVG using this plugin user can
-select and get timezone value of selected area.
-
-# Usage
----------------------
-`<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>`
-
-`<script type="text/javascript" src="[yourpath]/WorldMapGenerator.js"></script>`
-
- >Select any element you want and create map inside that element
-
-```javascript
-$(selector).WorldMapGenerator();
-```
-
-> You can customize WorldMapGenerator with options.
-
-```javascript
-$(selector).WorldMapGenerator({
-        width: 500,
-        height: 250,
-        hoverColor: '#5A5A5A',
-        selectedColor: '#496A84',
-        mapColor: '#BBB',
-        defaultCss: true,
-        quickLink: ["ACT", "CET", "EAT", "EST", "GMT","IST","MST"],
-        selectBox: true,
-        showHoverText: true
-})
-```
- >NOTE : No need to include css, it is created inside plugin but if you don't want to create css inside then use **defaultCss:false** and write your css.
-
-# Options
----------------------
-
-* **width** : (type:number) Set width of map.
-* **height** : (type:number) Set height of map.
-* **defaultCss** : (type:boolean)  No need to include css if it is true
-* **hoverColor** :(type:string) It will show color on hover 
-* **selectedColor** :(type:string) set selected ** timezone**  color
-* **mapColor** :(type:string) set map color
-* **quickLink** :(type:Array of string) It will create shortcuts to select zone **["IST","MST".......]** 
-* **selectBox** :(type:boolean) If it is **false** select box will not create
-* **showHoverText**  : (type:boolean)  If it is **false** hover text is not shown
-
-
-
-# Methods
----------------------
-
-###.setValue(string,string)
->```javascript
-$(selector).data('WorldMapGenerator').setValue(string,string)
-```
->First parameters take timezone string example: 'Asia/Kolkata' so it will select India in map but if you want to select using offset then use.
-
-```javascript
-$(selector).data('WorldMapGenerator').setValue('5.5','offset')
-```
->or you can select using country also.
-
-```javascript
-$(selector).data('WorldMapGenerator').setValue('IN','country')
-```
-
-###.getValue()
-
-> It will return object of seleted area:
-
-```javascript
-$(selector).data('WorldMapGenerator').getValue()
-```
-> Return Object
-```javascript
-{
-country: "IN"
-offset: 5.5
-pin: "373,94"
-selected: true
-timezone: "Asia/Kolkata"
-zonename: "IST"
-}
-```
-
-## License
----------------------
-It is available under the MIT LICENSE
+</html>
